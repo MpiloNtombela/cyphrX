@@ -224,6 +224,7 @@
             copyTableBtn.classList.add('btn-success')
             copyTableBtn.disabled = true
             setTimeout(() => {
+                window.getSelection().removeAllRanges()
                 copyTableBtn.innerHTML = 'Copy table'
                 copyTableBtn.classList.remove('btn-success')
                 copyTableBtn.disabled = false
