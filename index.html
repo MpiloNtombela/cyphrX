@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.1.0/materia/bootstrap.min.css"
+    integrity="sha512-UbcqXY5A2/3zERj9nrfx+dZUoI/i5wwF4dLhxefMzGRlq7ehXnPQp/HklTHjtnN6/vO6AfLWrsv1igEOqfv0Xg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>CyphrX</title>
+  <style>
+    textarea:disabled {
+      color: rgb(36, 36, 36) !important
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark sticky-top bg-primary">
+    <div class="container-md">
+      <a class="navbar-brand heading display-6" style="font-size: xx-large; font-weight: bold;">CyphrX
+        <p class="text-muted" style="font-size: 15px; margin: 0; line-height: 0.5;">
+          transposition
+        </p>
+      </a>
+      <div class="d-flex"></div>
+    </div>
+  </nav>
+
+  <div data-container class="container pt-3">
+    <div class="card mb-5">
+      <div class="card-body">
+        <div class="form-floating mb-3">
+          <input data-key type="text" class="form-control" id="cyphr-key">
+          <label for="cyphr-key" class="form-label">cyphr key</label>
+        </div>
+        <div class="mb-3">
+          <textarea data-input class="form-control" placeholder="message to cyphr" id="cyphr-msg"
+            style="height: 120px"></textarea>
+        </div>
+        <div class="text-end my-2">
+          <button data-cyphr class="btn py-2 text-uppercase fw-bold btn-primary rounded-pill">cyphr message</button>
+        </div>
+      </div>
+    </div>
+    <div data-output-card class="card mb-3 d-none">
+      <div class="mb-3 card-header">
+        <label for="order-opt" class="form-lable">change start order</label>
+        <select id="order-opt" data-cyphr-order class="form-select py-1" aria-label="change table order">
+        </select>
+        <!--help text-->
+        <div class="text-muted" style="font-size: 12px;">
+          <span class="text-muted">sequence or order of the first step</span>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <p style="text-align: justify;" data-output class="card-text d-none"></p>
+      </div>
+      <div class="card-footer text-end">
+        <button class="btn btn-info btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#cyphr-modal">cyphr
+          steps</button>
+      </div>
+    </div>
+    <div class="modal fade" id="cyphr-modal" tabindex="-1" aria-labelledby="steps" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="steps">Cyphr steps</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="order-opt" class="form-lable">add cyphr step</label>
+              <select id="order-opt" data-table-order class="form-select py-1" aria-label="change table order">
+              </select>
+            </div>
+            <div data-table></div>
+            <div data-table-sec></div>
+          </div>
+          <div class="modal-footer text-end">
+            <textarea disabled data-cyphr-output class="form-control" placeholder="cyphr output"
+              style="height: 100px"></textarea>
+            <button data-copy class="btn btn-primary py-2">copy cyphr</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <!--transposition js file-->
+  <script src="transposition.js"></script>
+</body>
+
+</html>
