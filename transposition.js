@@ -188,21 +188,33 @@
 
         const copyTableBtn = document.createElement('button')
         copyTableBtn.classList.add('btn')
-        copyTableBtn.classList.add('btn-primary')
+        copyTableBtn.classList.add('btn-info')
+        copyTableBtn.classList.add('rounded-pill')
         copyTableBtn.classList.add('py-2')
         copyTableBtn.innerHTML = 'Copy table'
 
         const div = document.createElement('div')
+        const p = document.createElement('p')
+        p.classList.add('text-muted')
+        p.classList.add('fs-6')
+        p.classList.add('fw-bold')
+        p.classList.add('my-2')
+
+
+
         div.classList.add('my-2')
         div.classList.add('text-end')
         div.appendChild(copyTableBtn)
-
         if (second) {
             tableContSec.innerHTML = ''
+            p.innerHTML = 'Step 2'
+            tableContSec.appendChild(p)
             tableContSec.appendChild(div)
             tableContSec.appendChild(table)
         } else {
             tableCont.innerHTML = ''
+            p.innerHTML = 'Step 1'
+            tableCont.appendChild(p)
             tableCont.appendChild(div)
             tableCont.appendChild(table)
         }
@@ -217,12 +229,14 @@
             document.execCommand('copy')
 
             copyTableBtn.innerHTML = 'Copied! 📋'
+            copyTableBtn.classList.remove('btn-info')
             copyTableBtn.classList.add('btn-success')
             copyTableBtn.disabled = true
             setTimeout(() => {
                 window.getSelection().removeAllRanges()
                 copyTableBtn.innerHTML = 'Copy table'
                 copyTableBtn.classList.remove('btn-success')
+                copyTableBtn.classList.add('btn-info')
                 copyTableBtn.disabled = false
             }, 2000)
         })
@@ -231,11 +245,13 @@
     btnCopy.addEventListener('click', () => {
         copyToClipboard(cyphrOutput.value)
         btnCopy.innerHTML = 'Copied! 📋'
+        btnCopy.classList.remove('btn-info')
         btnCopy.classList.add('btn-success')
         btnCopy.disabled = true
         setTimeout(() => {
             btnCopy.innerHTML = 'Copy cyphr'
             btnCopy.classList.remove('btn-success')
+            btnCopy.classList.add('btn-info')
             btnCopy.disabled = false
         }, 2000)
     })
