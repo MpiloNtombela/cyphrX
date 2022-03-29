@@ -26,11 +26,11 @@
     btnCyphr.addEventListener('click', () => {
         let k = cyphrKey.value.trim()
         const strKSorted = k.split('').sort().join('');
-        encode(message.value, cyphrKey.value)
         cyphrOrder.innerHTML = ""
         tableOrder.innerHTML = ""
         tableCont.innerHTML = ''
         tableContSec.innerHTML = ''
+        encode(message.value, cyphrKey.value)
         if (k !== strKSorted) {
             tableOrder.innerHTML += `<option>${k}</option>`
             tableOrder.innerHTML += `<option>${strKSorted}</option>`
