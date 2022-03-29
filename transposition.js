@@ -106,9 +106,6 @@
         text = text.replace(/[^a-zA-Z]/g, '');
         text = text.toUpperCase();
 
-        // create hashmap to store the characters and their positions in the string
-
-        // fill rows with characters from the string with length of the key
         let rows = [];
         let r = [];
         for (let i = 0; i < text.length; i++) {
@@ -219,7 +216,6 @@
             window.getSelection().addRange(range)
             document.execCommand('copy')
 
-            // // change button text
             copyTableBtn.innerHTML = 'Copied! 📋'
             copyTableBtn.classList.add('btn-success')
             copyTableBtn.disabled = true
