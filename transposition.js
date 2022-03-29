@@ -24,8 +24,11 @@
     btnCyphr.addEventListener('click', () => {
         let k = cyphrKey.value.trim()
         const strKSorted = k.split('').sort().join('');
+        cyphrOrder.innerHTML = ""
+        tableOrder.innerHTML = ""
+        tableCont.innerHTML = ''
+        tableContSec.innerHTML = ''
         encode(message.value, cyphrKey.value)
-
         if (k !== strKSorted) {
             tableOrder.innerHTML += `<option>${k}</option>`
             tableOrder.innerHTML += `<option>${strKSorted}</option>`
@@ -231,7 +234,7 @@
         btnCopy.classList.add('btn-success')
         btnCopy.disabled = true
         setTimeout(() => {
-            btnCopy.innerHTML = 'Copy table'
+            btnCopy.innerHTML = 'Copy cyphr'
             btnCopy.classList.remove('btn-success')
             btnCopy.disabled = false
         }, 2000)
