@@ -9,8 +9,6 @@
     const btnCopy = document.querySelector('[data-copy]')
     const tableCont = document.querySelector('[data-table]')
     const tableContSec = document.querySelector('[data-table-sec]')
-    // const thead = document.querySelector('[data-thead]')
-    // const tbody = document.querySelector('[data-tbody]')
     const cyphrOrder = document.querySelector('[data-cyphr-order]')
     const tableOrder = document.querySelector('[data-table-order]')
 
@@ -76,7 +74,6 @@
         output.classList.remove('d-none')
         cyphrOutput.innerHTML = encodedText
     }
-    // create function to encode transposition cipher
     function encode(text, key) {
         // throw error if key is not a number
         if (isNaN(cyphrKey.value.trim()) || isNaN(key.trim())) {
