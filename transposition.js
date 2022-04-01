@@ -70,7 +70,7 @@
 
         // join the encoded text with spaces
         encodedText = encodedText.join('');
-        encodedText = [...encodedText].map((d, i) => (i) % columnsNum == 0 ? ' ' + d : d).join('').trim()
+        encodedText = [...encodedText].map((d, i) => (i) % 5 == 0 ? ' ' + d : d).join('').trim()
 
         // output
         output.innerHTML = encodedText
